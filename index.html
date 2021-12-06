@@ -7,15 +7,12 @@
     <title>Image Editor</title>
 </head>
 <body style="background-color: #082032;">
-    <canvas style="height: 500px;width: 500px;background-color:#ffff " id="canvas">
-        
-    </canvas>
-    <div class="wrap" style="margin-top: 10px; width: 500px; display: flex; justify-content: space-between;">
+    <canvas width="700" height="500" style="border:1px solid #ccc;margin:10px;cursor:crosshair; background-color:#fff" id="canvas"></canvas>
+    <form class="canvas-attrs" style="width: 700px; display: flex;justify-content: space-between;margin-left: 10px;">
         <input id="lineW" type="text" placeholder="Line width">
         <input id="lineC" type="text" placeholder="Line color">
-            <input id="done" type="button" value="Done" onClick="done()">
-            <input id="clear" type="button" value="Clear" onClick="clearCanvas()"></input>
-    </div>
+        <input id="clear" type="button" value="Clear" onClick="clearCanvas()"></input>
+    </form>    
     <script src="./script.js">
 
     </script>
