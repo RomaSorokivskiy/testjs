@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor</title>
+</head>
+<body style="display: flex;justify-content: center;align-items: center;flex-direction: column; background-color: #082032;">
+    <canvas style="height: 500px;width: 500px;background-color:#ffff" id="canvas">
+        
+    </canvas>
+    <div class="wrap" style="margin-top: 10px; width: 500px; display: flex; justify-content: space-between;">
+        <input id="lineW" type="text" placeholder="Line width">
+        <input id="lineC" type="text" placeholder="Line color">
+            <input id="done" type="button" value="Done" onClick="done()">
+            <input id="clear" type="button" value="Clear" onClick="clearCanvas()"></input>
+    </div>
+    <script src="./script.js">
+
+    </script>
+</body>
+</html>
