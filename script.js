@@ -1,28 +1,33 @@
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
 
-    const canvas = document.getElementById('canvas');
+let lineW = document.getElementById('lineW').value;
+let lineC = document.getElementById('lineC').value;
 
-    const ctx = canvas.getContext('2d');
-    const image = new Image(60, 45);   
-    image.onload = drawImageActualSize; 
-    
-    image.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
-    function drawImageActualSize() {
-        canvas.width = this.naturalWidth;
-        canvas.height = this.naturalHeight;
-      
-        ctx.drawImage(this, 0, 0);
-      }
+lineW = 2;
+
+var myColor;
+document.getElementById('lineC').oninput = function() {
+  myColor = this.value;
+};
+
+canvas.onmousedown = function(event) {
+  canvas.onmousemove = function(event) {
+    var x = event.offsetX;
+    var y = event.offsetY;
+    ctx.fillStyle = myColor;
+    ctx.fillRect(x - lineW, y -lineW, lineW,lineW);
+    ctx.fill();
+  };
+
+  canvas.onmouseup = function() {
+    canvas.onmousemove = null;
+  };
+};
     function done(){
-        let lineW = document.getElementById('lineW').value;
-        let lineC = document.getElementById('lineC').value;
-
-        canvas.style.borderStyle = 'solid';
-        canvas.style.borderWidth = lineW + 'px';
-        canvas.style.borderColor = lineC;
+      lineW = document.getElementById('lineW').value;
+      lineC = document.getElementById('lineC').value;
     }
     function clearCanvas(){
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      canvas.style.borderStyle = '';
-      canvas.style.borderWidth = '';
-      canvas.style.borderColor = '';
     }
