@@ -7,8 +7,11 @@
     <title>Image Editor</title>
 </head>
 <body style="background-color: #082032;">
-    <canvas width="700" height="500" style="border:1px solid #ccc;margin:10px;cursor:crosshair; background-color:#fff" id="canvas"></canvas>
-    <form class="canvas-attrs" style="width: 700px; display: flex;justify-content: space-between;margin-left: 10px;">
+    <div class="canvas" style="display: flex; justify-content: space-evenly;">
+        <canvas width="700" height="500" style="border:1px solid #ccc;margin:10px;cursor:crosshair; background-color:#fff" id="canvas"></canvas>
+        <canvas width="700" height="500" style="border:1px solid #ccc;margin:10px;background-color:#fff" id="mirror"></canvas>
+    </div>
+    <form class="canvas-attrs" style="width: 700px; display: flex;justify-content: space-between;margin-left: 162px;">
         <input id="lineW" type="text" placeholder="Line width">
         <input id="lineC" type="text" placeholder="Line color">
         <input id="clear" type="button" value="Clear" onClick="clearCanvas()"></input>
